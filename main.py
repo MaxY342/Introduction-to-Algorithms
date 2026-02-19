@@ -1,4 +1,21 @@
+#2.1-2
+'''
+nums = [4, 1, 8, 9, 6, 7]
+def backwards_insertion_sort(nums):
+    for i in range(1, len(nums)):
+        cur = nums[i]
+        j = i-1
+        while j >= 0 and nums[j] < cur:
+            nums[j+1] = nums[j]
+            nums[j] = cur
+            j -= 1
+    return nums
+print(backwards_insertion_sort(nums))
+''' 
+
+
 #2.1-3
+'''
 nums = [2,3,5,7,9]
 val = 7
 def find_val(v):
@@ -7,7 +24,7 @@ def find_val(v):
             return i
     return None
 print(find_val(val))
-'''
+
 Loop invariant:
 Initialization: on the first iteration i = 0, we are checking nums[i] which is the first element. The loop
 invariant holds prior to the first iteration since we are checking nums[0..i-1] which is an empty array that
