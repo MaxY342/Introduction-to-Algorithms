@@ -1,7 +1,7 @@
 #2.1-2
 '''
 nums = [4, 1, 8, 9, 6, 7]
-def backwards_insertion_sort(nums):
+def descending_insertion_sort(nums):
     for i in range(1, len(nums)):
         cur = nums[i]
         j = i-1
@@ -10,7 +10,7 @@ def backwards_insertion_sort(nums):
             nums[j] = cur
             j -= 1
     return nums
-print(backwards_insertion_sort(nums))
+print(descending_insertion_sort(nums))
 ''' 
 
 
