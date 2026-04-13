@@ -38,3 +38,36 @@ increases i by 1, i = len(nums) at termination by which each element in nums[0..
 been searched. If nothing has been returned yet v is not in nums[0..len(nums)-1] and NIL is returned
 Hence, the algorithm is correct.
 '''
+
+#2.2-1
+'O(n^3)'
+
+#2.2-2
+'''
+nums = [4, 1, 8, 9, 6, 7]
+def selection_sort(nums:list[int]):
+    for i in range(len(nums)-1):
+        lowest = nums[i]
+        lowest_index = i
+        for j in range(i+1, len(nums)):
+            if nums[j] < lowest:
+                lowest = nums[j]
+                lowest_index = j
+        if lowest != nums[i]:
+            temp = nums[i]
+            nums[i] = nums[lowest_index]
+            nums[lowest_index] = temp
+selection_sort(nums)
+print(nums)
+
+Loop Invariant:
+Initialization: At first iteration i = 0, and we are checking nums[i], before this iteration we are
+checking nums[0..i-1] which is an empty array which is trivially sorted containing the 0 smallest elements, loop invariant holds
+Maintenance: Assume invariant holds for some iteration i, if smaller numbers than nums[i] are found in nums[i+1..len(nums)-1], nums[i]
+is swaped with the smallest of those numbers, leaving nums[0..i] sorted, loop invariance is preserved. If no smaller number is found 
+nums[i] remains unchanged meaning nums[0..i] is already sorted, loop invariance is preserved.
+Conclusion: The condition for loop termination is when i >= len(nums)-1, since i increases by 1 each step, every element in
+nums[0..len(nums)-2] is sorted and the final element nums[len(nums)-1] is the only element left meaning it is the largest
+Hence, the algorithm is correct
+'''
+
