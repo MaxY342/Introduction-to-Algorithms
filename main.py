@@ -71,3 +71,17 @@ nums[0..len(nums)-2] is sorted and the final element nums[len(nums)-1] is the on
 Hence, the algorithm is correct
 '''
 
+#2.2-3
+'''
+Average case: (n-1)/2 elements
+Worst case: n-1 elements
+Average case: O(n)
+Worst case: O(n)
+'''
+
+#2.2-4
+'''
+You can add a special case that if matches the input, returns a hard coded answer.
+For example for a sorting algorithm, if input is already sorted return it.
+'''
+
