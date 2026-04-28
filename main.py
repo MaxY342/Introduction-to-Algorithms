@@ -126,3 +126,21 @@ def merge(nums, s, m, e):
 merge(nums, 0, len(nums)//2, len(nums))
 print(nums)
 '''
+
+#2.3-5
+'''
+nums = [1, 2, 5, 7, 8, 9]
+def binarySearch(nums, s, e, v):
+    if s > e:
+        return -1
+    
+    middle = s + ((e-s)//2)
+    
+    if v == nums[middle]:
+        return middle
+    elif v > nums[middle]:
+        return binarySearch(nums, middle, e, v)
+    else:
+        return binarySearch(nums, s, middle, v)
+print(binarySearch(nums, 0, len(nums)-1, 7))
+'''
