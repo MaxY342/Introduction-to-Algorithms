@@ -149,3 +149,15 @@ The depth of the recursion tree is log base 2 n since we are spliting nums in ha
 we are comparing v to the middle of nums.
 Therefore runtime is O(logn)
 '''
+
+#2.3-7*
+'''
+def sumSearch(nums, x):
+    merge(nums, 0, len(nums)//2, len(nums))
+    for i in range(len(nums)):
+        target = x-nums[i]
+        foundIndex = binarySearch(nums, 0, len(nums)-1, target)
+        if foundIndex != -1 and foundIndex != i:
+            return True
+    return False
+'''
