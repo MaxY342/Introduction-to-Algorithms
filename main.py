@@ -1,3 +1,4 @@
+import math
 #2.1-2
 '''
 nums = [4, 1, 8, 9, 6, 7]
@@ -85,3 +86,43 @@ You can add a special case that if matches the input, returns a hard coded answe
 For example for a sorting algorithm, if input is already sorted return it.
 '''
 
+#2.3-2
+'''
+nums = [4, 1, 8, 9, 6, 7, 1, 1, 2, 8, 10, 6, 2, 8, 8, 9, 1, 7]
+def merge(nums, s, m, e):
+    if e - s <= 1:
+        return
+
+    mid1 = s + (m - s) // 2
+    mid2 = m + (e - m) // 2
+
+    merge(nums, s, mid1, m)
+    merge(nums, m, mid2, e)
+
+    firstHalf = nums[s:m]
+    secondHalf = nums[m:e]
+
+    i = j = 0
+    k = s
+
+    while i < len(firstHalf) and j < len(secondHalf):
+        if firstHalf[i] < secondHalf[j]:
+            nums[k] = firstHalf[i]
+            i += 1
+        else:
+            nums[k] = secondHalf[j]
+            j += 1
+        k += 1
+
+    while i < len(firstHalf):
+        nums[k] = firstHalf[i]
+        i += 1
+        k += 1
+
+    while j < len(secondHalf):
+        nums[k] = secondHalf[j]
+        j += 1
+        k += 1
+merge(nums, 0, len(nums)//2, len(nums))
+print(nums)
+'''
