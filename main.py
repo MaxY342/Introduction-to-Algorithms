@@ -160,4 +160,7 @@ def sumSearch(nums, x):
         if foundIndex != -1 and foundIndex != i:
             return True
     return False
+
+Runtime analysis:
+merge sort takes O(nlogn) time + binary search O(logn) nested in for loop O(n) takes O(nlogn) time = O(nlogn)
 '''
