@@ -143,4 +143,9 @@ def binarySearch(nums, s, e, v):
     else:
         return binarySearch(nums, s, middle, v)
 print(binarySearch(nums, 0, len(nums)-1, 7))
+
+Worst case runtime analysis:
+The depth of the recursion tree is log base 2 n since we are spliting nums in half each time, the cost at each level is constant since
+we are comparing v to the middle of nums.
+Therefore runtime is O(logn)
 '''
