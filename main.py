@@ -175,3 +175,27 @@ k = logn, and the right component is O(nlog(n/logn)) = O(nlogn - nloglogn) = O(n
 d. in practice, k should not be logn since insertion sort is more efficient on small lists due to lower constant factors, so k should be
 a small constant where insertion sort is more efficient than merge sort depending on its implementation details, for example k = 10 or 20
 '''
+
+#2-2
+'''
+a. You need to prove that the loop invariant holds for initialization, maintenance, and termination.
+b. Loop invariant (python implementation):
+Initialization: At the first iteration j = n which is the last element, before the first iteration j = n+1, nums[n, n+1] is an empty
+array where nums[n] is trivially the smallest element of an empty array, loop invariance holds
+Maintenance: Assume invariance holds for some iteration j, if nums[j] < nums[j-1], they are swapped in nums making nums[j-1] the
+smallest element in nums[j-1..n], and if nums[j] >= nums[j-1], nums is maintained keeping nums[j-1] as the smallest element in
+nums[j-1..n] as well, loop invariance is maintained
+Termination: The condition for loop termination is when j = i+1 and nums[j] is compared to nums[j-1] where the smallest of the two is
+put into nums[j-1] followed by the larger of the two, this leaves nums[i] as the smallest element in nums[i..n] Hence, loop is correct
+c. Loop invariant (python implementation):
+Initialization: At the first iteration i = 0 which is the first element in nums, before the first iteration i = -1 where we are checking
+nums[0, i-1], this is an empty array which is trivially sorted containing the 0 smallest elements, loop invariance holds
+Maintenance: Assume loop invariance holds for some iteration i, since nums[i] is the smallest element in nums[i..n], nums[0..i] is
+sorted, loop invariance holds
+Termination: The condition for loop termination is when i = n-1, at this point nums[0..n-1] is sorted leaving nums[n] as the largest
+number in nums, hence nums[0..n] is sorted. Hence, algorithm is correct 
+d. Runtime analysis:
+for every iteration i to n-1 another loop iterates through nums[i+1..n], with the starting iteration count when i = 0 being through 
+nums[1..n] and the final iteration count when i = n-1 being 1 meaning the number of comparisons can be represented by the series: 
+(n-1) + (n-2) +..+ 1, adding this series leaves n(n-1)/2, this represents a runtime of O(n^2), this is the same as insertion sort
+'''
