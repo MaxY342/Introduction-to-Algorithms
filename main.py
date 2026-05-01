@@ -164,3 +164,14 @@ def sumSearch(nums, x):
 Runtime analysis:
 merge sort takes O(nlogn) time + binary search O(logn) nested in for loop O(n) takes O(nlogn) time = O(nlogn)
 '''
+
+#Chapter 2 Problems
+#2-1
+'''
+a. runtime of insertion sort on k elements O(k^2) * number of times insertion sort is run O(n/k) = O(nk)
+b. runtime of merge sort on n/k sublists contains tree of depth log base 2 n/k, at each level we are merging n elements so O(nlog(n/k))
+c. if we approach O(nlogn) with the right component of O(nk + nlog(n/k)), k = 1 which is trivially just merge sort, if we approach O(nlogn) with the left component, 
+k = logn, and the right component is O(nlog(n/logn)) = O(nlogn - nloglogn) = O(nlogn) so k = logn is the largest value of k that allows the algorithm to run in O(nlogn)
+d. in practice, k should not be logn since insertion sort is more efficient on small lists due to lower constant factors, so k should be
+a small constant where insertion sort is more efficient than merge sort depending on its implementation details, for example k = 10 or 20
+'''
