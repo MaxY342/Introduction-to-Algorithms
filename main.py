@@ -199,3 +199,24 @@ for every iteration i to n-1 another loop iterates through nums[i+1..n], with th
 nums[1..n] and the final iteration count when i = n-1 being 1 meaning the number of comparisons can be represented by the series: 
 (n-1) + (n-2) +..+ 1, adding this series leaves n(n-1)/2, this represents a runtime of O(n^2), this is the same as insertion sort
 '''
+
+#2-3
+'''
+a. O(n)
+b. 
+def naive_polynomial_evaluation(a, x):
+    result = 0
+    for i in range(len(a)):
+        variable = x
+        for j in range(i):
+            variable *= x
+        result += a[i] * variable
+    return result
+runtime analysis: O(n^2) from nested loop, slower than horner's method
+c.Loop invariant:
+Initialization: before the first iteration, i = n, so p = sum_{k=0}^{-1}(A[k + i + 1] * x^k) = 0, this matches first line, loop invariance holds
+Maintenance: assume invariant holds at the start of some iteration i, p = sum_{k=0}^{n-(i+1)}(A[k + i + 1] * x^k), this means p = the sum of A[i+1..n] * x^0..x^(n-(i+1)),
+at next iteration, i will decrease by 1 meaning the left bound of the indexed array A will shift by 1 and the right bound of x^k will shift right by 1, loop invariance maintained
+Termination: at the final iteration, i=-1 meaning p = the sum of A[0..n] * x^0..x^n, hence algorithm is correct
+'''
+
