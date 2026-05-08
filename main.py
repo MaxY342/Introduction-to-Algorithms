@@ -220,3 +220,55 @@ at next iteration, i will decrease by 1 meaning the left bound of the indexed ar
 Termination: at the final iteration, i=-1 meaning p = the sum of A[0..n] * x^0..x^n, hence algorithm is correct
 '''
 
+#2-4
+'''
+a. (1,5), (2,5), (3,4), (3,5), (4, 5) (start index 1)
+b. the array in reverse sorted order, it will have arithmetic series 1..n-1 = sum_{i=1}^{n-1}(i) = (n-1)(1+n-1)/2 = (n-1)(n)/2 number of inversions
+c. it is the same, they are both O(n^2) and the number of inversions represents the number of times numbers will need to be shifted in insertion sort
+d. 
+nums = [4, 1, 8, 9, 6, 7]
+def findInversions(nums, l, r):
+    m = l + (r-l) // 2
+    inversions = 0
+
+    if r > l + 1:
+        inversions += findInversions(nums, l, m)
+        inversions += findInversions(nums, m, r)
+    
+    arr1 = []
+    arr2 = []
+
+    for i in range(l, m):
+        arr1.append(nums[i])
+    for j in range(m, r):
+        arr2.append(nums[j])
+
+    i=0
+    j=0
+    k=l
+
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] <= arr2[j]:
+            nums[k] = arr1[i]
+            i += 1
+            k += 1
+        else:
+            nums[k] = arr2[j]
+            inversions += len(arr1) - i
+            j += 1
+            k += 1
+
+    while i < len(arr1):
+        nums[k] = arr1[i]
+        i += 1
+        k += 1
+
+    while j < len(arr2):
+        nums[k] = arr2[j]
+        j += 1
+        k += 1
+
+    return inversions
+        
+print(findInversions(nums, 0, len(nums)))
+'''
