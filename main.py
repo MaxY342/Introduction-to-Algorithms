@@ -272,3 +272,11 @@ def findInversions(nums, l, r):
         
 print(findInversions(nums, 0, len(nums)))
 '''
+
+#3.1-2
+'''
+Runtime analysis:
+O(n^2) since each iteration i over n-1 elements of the outer loop induces n-i iterations in the inner loop. f(n) < c(n^2) for some constant c, n_0
+Ω(n^2) since each iteration i over n-1 elements of the outer loop induces n-i iterations in the inner loop. f(n) > c(n^2) for some constant c, n_0
+Θ(n^2) since O(n^2) and Ω(n^2)
+'''
