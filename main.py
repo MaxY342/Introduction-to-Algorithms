@@ -286,3 +286,12 @@ O(n^2) since each iteration i over n-1 elements of the outer loop induces n-i it
 an elements * 1-2an positions moved = an - 2a^2n^2 = Ω(n^2), 1/n < a < 1/2, a = 1/n maximizes the number of times that the n largest values must pass through each of the middle 
 (1-2a)n array positions
 '''
+
+#3.2-1
+'''
+O(f(n) + g(n)) must be from the function with the highest growth rate of f(n) and g(n). Suppose f(n) is the fuction with the larger growth rate O(h(n)), f(n) < c(h(n)) for some
+constant c, n_0. g(n) which has a slower growth rate will also be < c(h(n)) for some constant c, n_0 whereas viceversa f(n) !< c(O(g(n))) for some constant c, n_0. 
+So O(h(n)) = O(f(n) + g(n)) is determined by the higher growth rate function between f(n) and g(n), likewise Ω(f(n) + g(n)) must be from the function with the highest growth
+rate of f(n) and g(n).
+Therefore Θ(f(n) + g(n)) is the function with the highest growth rate of f(n) and g(n) = max{f(n),g(n)}
+'''
