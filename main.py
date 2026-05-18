@@ -280,3 +280,9 @@ O(n^2) since each iteration i over n-1 elements of the outer loop induces n-i it
 Ω(n^2) since each iteration i over n-1 elements of the outer loop induces n-i iterations in the inner loop. f(n) > c(n^2) for some constant c, n_0
 Θ(n^2) since O(n^2) and Ω(n^2)
 '''
+
+#3.1-3
+'''
+an elements * 1-2an positions moved = an - 2a^2n^2 = Ω(n^2), 1/n < a < 1/2, a = 1/n maximizes the number of times that the n largest values must pass through each of the middle 
+(1-2a)n array positions
+'''
