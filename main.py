@@ -295,3 +295,10 @@ So O(h(n)) = O(f(n) + g(n)) is determined by the higher growth rate function bet
 rate of f(n) and g(n).
 Therefore Θ(f(n) + g(n)) is the function with the highest growth rate of f(n) and g(n) = max{f(n),g(n)}
 '''
+
+#3.2-2
+'''
+Algorithm A can theoretically hold any runtime more than n^2, this is not a very strict bound where algorithm A can have runtime n^3, n^4..n^inf which in practice is not a very
+useful metric in determining the effectiveness of an algorithm since it could run for infinity time
+'''
+
