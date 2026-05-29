@@ -311,3 +311,10 @@ Expanding 2^2n gives (2^2)^n = 4^n, comparing with 2^n: (2^(2n))/(2^n) = 2^n, th
 An algorithm with runtime f(n) that has both O(g(n)) worst case running time and Ω(g(n)) best case running time has some constant c1 and c2 where c1(g(n)) <= f(n) <= c2(g(n))
 this matches the definition of Θ notation making it also Θ(g(n)). Only when both ceiling an floor are asymptotically the same function can there be 1 Θ notation class.
 '''
+
+#3.2-6
+'''
+o(g(n)) and ω(g(n)) are loose upper and lower bounds on a function. o(g(n)) only includes functions where c(g(n)) > f(n) for all constants c where n >= n0 and ω(g(n)) only
+includes functions where c(g(n)) < f(n) for all constants c where n >= n0. There exists no function f(n) that is both more than and less than g(n) for any constant multiples c.
+For instance suppose some function f(n) exists in both sets, for c=1, f(n) < g(n) and f(n) > g(n), this is impossible. Therefore o(g(n)) ∩ ω(g(n)) = ∅
+'''
