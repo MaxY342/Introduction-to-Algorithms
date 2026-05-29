@@ -305,3 +305,9 @@ asymptotic notation used
 Expanding 2^n+1 gives 2*2^n this is a constant multiplied by 2^n therefore there is some constant c where c(2^n) >= 2^n+1, hence 2^n+1 = O(2^n).
 Expanding 2^2n gives (2^2)^n = 4^n, comparing with 2^n: (2^(2n))/(2^n) = 2^n, therefore there is no constant c where c(2^n) >= 2^2n, hence 2^2n ≠ O(2^n)
 '''
+
+#3.2-4/3.2-5
+'''
+An algorithm with runtime f(n) that has both O(g(n)) worst case running time and Ω(g(n)) best case running time has some constant c1 and c2 where c1(g(n)) <= f(n) <= c2(g(n))
+this matches the definition of Θ notation making it also Θ(g(n)). Only when both ceiling an floor are asymptotically the same function can there be 1 Θ notation class.
+'''
