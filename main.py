@@ -318,3 +318,11 @@ o(g(n)) and ω(g(n)) are loose upper and lower bounds on a function. o(g(n)) onl
 includes functions where c(g(n)) < f(n) for all constants c where n >= n0. There exists no function f(n) that is both more than and less than g(n) for any constant multiples c.
 For instance suppose some function f(n) exists in both sets, for c=1, f(n) < g(n) and f(n) > g(n), this is impossible. Therefore o(g(n)) ∩ ω(g(n)) = ∅
 '''
+
+#3.2-7
+'''
+Definition for Ω(g(n,m)):
+Ω(g(n,m)) = {f(n,m): there exist positive constants c, n0, and m0 such that 0 <= c(g(n,m)) <= f(n,m) for all n >= n0 and m >= m0}
+Definition for Θ(g(n,m)):
+Θ(g(n,m)) = {f(n,m): there exist positive constants c1, c2, n0, and m0 such that c1(g(n,m)) <= f(n,m) <= c2(g(n,m)) for all n >= n0 and m >= m0}
+'''
