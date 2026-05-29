@@ -326,3 +326,13 @@ Definition for Ω(g(n,m)):
 Definition for Θ(g(n,m)):
 Θ(g(n,m)) = {f(n,m): there exist positive constants c1, c2, n0, and m0 such that c1(g(n,m)) <= f(n,m) <= c2(g(n,m)) for all n >= n0 and m >= m0}
 '''
+
+#3.3-1
+'''
+Suppose n1 < n2. f(n1) <= f(n2) and g(n1) <= g(n2), adding these two inequalities together: f(n1) + g(n1) <= f(n2) + g(n2) so
+f(n) + g(n) is monotonically increasing. 
+Using these same constants, g(n1) <= g(n2) and f(n) is monotonically increasing so
+f(g(n1)) <= f(g(n2)) thus f(g(n)) is monotonically increasing. 
+Given: f(n) >= 0, g(n) >= 0, and for constants n1 < n2: f(n1) <= f(n2), g(n1) <= g(n2) f(n1) * g(n1) <= f(n2) * g(n2) therefore, 
+f(n) * g(n) is monotonically increasing
+'''
