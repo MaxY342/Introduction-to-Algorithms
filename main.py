@@ -289,16 +289,13 @@ an elements * 1-2an positions moved = an - 2a^2n^2 = Ω(n^2), 1/n < a < 1/2, a =
 
 #3.2-1
 '''
-O(f(n) + g(n)) must be from the function with the highest growth rate of f(n) and g(n). Suppose f(n) is the fuction with the larger growth rate O(h(n)), f(n) < c(h(n)) for some
-constant c, n_0. g(n) which has a slower growth rate will also be < c(h(n)) for some constant c, n_0 whereas viceversa f(n) !< c(O(g(n))) for some constant c, n_0. 
-So O(h(n)) = O(f(n) + g(n)) is determined by the higher growth rate function between f(n) and g(n), likewise Ω(f(n) + g(n)) must be from the function with the highest growth
-rate of f(n) and g(n).
-Therefore Θ(f(n) + g(n)) is the function with the highest growth rate of f(n) and g(n) = max{f(n),g(n)}
+For max{f(n), g(n)} = Θ(f(n) + g(n)), there must be some constant c1 and c2 where c1(f(n) + g(n)) <= max{f(n), g(n)} <= c2(f(n) + g(n)). Trivially, max{f(n), g(n)} <= f(n) + g(n)
+so c2 can equal 1. For c1, 2(max{f(n), g(n)}) >= f(n) + g(n), rearranging gives max{f(n), g(n)} >= 1/2(f(n) + g(n)) so c1 can equal 1/2. Both O and Ω bounds are accounted for so 
+max{f(n), g(n)} = Θ(f(n) + g(n))
 '''
 
 #3.2-2
 '''
-Algorithm A can theoretically hold any runtime more than n^2, this is not a very strict bound where algorithm A can have runtime n^3, n^4..n^inf which in practice is not a very
-useful metric in determining the effectiveness of an algorithm since it could run for infinity time
+Big o notation signifies the upper bound of an algorithm, saying the running time of algorithm A is at least O(n^2) instead signifies a lower bound which is contradictory to the
+asymptotic notation used
 '''
-
