@@ -299,3 +299,9 @@ max{f(n), g(n)} = Θ(f(n) + g(n))
 Big o notation signifies the upper bound of an algorithm, saying the running time of algorithm A is at least O(n^2) instead signifies a lower bound which is contradictory to the
 asymptotic notation used
 '''
+
+#3.2-3
+'''
+Expanding 2^n+1 gives 2*2^n this is a constant multiplied by 2^n therefore there is some constant c where c(2^n) >= 2^n+1, hence 2^n+1 = O(2^n).
+Expanding 2^2n gives (2^2)^n = 4^n, comparing with 2^n: (2^(2n))/(2^n) = 2^n, therefore there is no constant c where c(2^n) >= 2^2n, hence 2^2n ≠ O(2^n)
+'''
