@@ -350,3 +350,30 @@ Since n is an integer:
 n=n
 LS = RS
 '''
+
+#3.3-3
+'''
+Show that (n+o(n))^k = Θ(n^k) for any real constant k.
+let h(n) = o(n)
+lim_{n to inf}(h(n)/n) = 0
+So h(n) becomes negligible compared to n, factoring out n from LS gives:
+= (n(1 + h(n)/n))^k
+= n^k * (1 + h(n)/n)^k
+From 3.14 we know that (1 + x) < e^x, since lim_{n to inf}(h(n)/n) = 0, for a large enough n: (1 + h(n)/n)^k will be bounded by some constant c that approaches 1 so:
+c(n^k) <= n^k * (1 + h(n)/n)^k <= c(n^k)
+This matches the definition of theta notation
+
+Conclude that ⌈n⌉^k = Θ(n^k) and ⌊n⌋^k = Θ(n^k).
+⌈n⌉ = n + m, 0 <= m <= 1
+⌈n⌉ = n + O(1)
+O(1) = o(n)
+This means constant factor m becomes insignificant as n approaches infinity
+Based on what we found previously:
+(n+o(n))^k = Θ(n^k)
+⌈n⌉^k = Θ(n^k)
+
+For ⌊n⌋^k:
+⌊n⌋ = n - m, 0 <= m <= 1
+⌊n⌋ = n - o(1)
+⌊n⌋^k = Θ(n^k)
+'''
