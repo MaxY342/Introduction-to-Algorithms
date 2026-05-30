@@ -336,3 +336,17 @@ f(g(n1)) <= f(g(n2)) thus f(g(n)) is monotonically increasing.
 Given: f(n) >= 0, g(n) >= 0, and for constants n1 < n2: f(n1) <= f(n2), g(n1) <= g(n2) f(n1) * g(n1) <= f(n2) * g(n2) therefore, 
 f(n) * g(n) is monotonically increasing
 '''
+
+#3.3-2
+'''
+With restriction 0 <= a <= 1, without the floor and ceiling, an + (a-1)n = n. With the ceiling and floor, ⌊an⌋ + ⌈(1-a)n⌉ and n being
+an integer, one of the components floor/ceiling will be rounded down and one of them will be rounded up, this will equal n as well.
+Mathematically:
+We need to prove ⌊an⌋ + ⌈(1-a)n⌉ = n
+Let x = an
+⌊x⌋ + ⌈n-x⌉ = n
+Since n is an integer:
+⌊x⌋ + n - ⌊x⌋ = n
+n=n
+LS = RS
+'''
