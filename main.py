@@ -377,3 +377,43 @@ For ⌊n⌋^k:
 ⌊n⌋ = n - o(1)
 ⌊n⌋^k = Θ(n^k)
 '''
+
+#3.3-4
+'''
+a.
+let x = a^log_b(c)
+log_b(x) = log_b(a^log_b(c))
+log_b(x) = log_b(c) * log_b(a)
+log_b(x) = log_b(c^log_b(a))
+x = c^log_b(a)
+a^log_b(c) = c^log_b(a)
+
+b.
+if n! = o(n^n):
+lim_{n to inf}(n!/n^n) = 0
+Using Stirling's approximation:
+n! = root(2πn)(n/e)^n(1 + Θ(1/n))
+lim_{n to inf}(Θ(1/n)) = 0
+lim_{n to inf}(n!) = root(2πn)(n/e)^n
+n!/n^n
+= (root(2πn)(n/e)^n)/(n^n)
+= (root(2πn)n^n)/(n^n(e^n))
+= (root(2πn))/(e^n)
+lim_{n to inf}((root(2πn))/(e^n)) = 0
+
+if n! = ω(2^n):
+lim_{n to inf}(2^n/n!) = 0
+Using Stirling's approximation:
+n! = root(2πn)(n/e)^n(1 + Θ(1/n))
+lim_{n to inf}(n!) = root(2πn)(n/e)^n
+2^n/n!
+= 2^n/root(2πn)(n/e)^n
+lim_{n to inf}(2^n/root(2πn)(n/e)^n) = 0
+
+lg(n!) = (1/2)lg(2πn) + nlg(n/e)
+lg(n!) = (1/2)lg(2πn) + nlg(n)- nlg(e)
+ln(n!) = nlg(n)(1 + lg(2πn)/(2nlg(n)) - nlg(e)/nlg(n))
+lim_{n to inf}(lg(2πn)/(2nlg(n))) = 0
+lim_{n to inf}(nlg(e)/nlg(n)) = 0
+lg(n!) = Θ(nlgn)
+'''
