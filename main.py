@@ -417,3 +417,23 @@ lim_{n to inf}(lg(2πn)/(2nlg(n))) = 0
 lim_{n to inf}(nlg(e)/nlg(n)) = 0
 lg(n!) = Θ(nlgn)
 '''
+
+'''
+Matrix multiplication:
+def matrix_multiplication(a, b, c, arow, acol, brow, bcol, crow, ccol, n, N):
+    if n == 1:
+        c[crow*N + ccol] += a[arow*N + acol] * b[brow*N + bcol]
+        return
+    half = n//2
+    matrix_multiplication(a, b, c, arow, acol, brow, bcol, crow, ccol, half, N)
+    matrix_multiplication(a, b, c, arow, acol+half, brow+half, bcol, crow, ccol, half, N)
+    matrix_multiplication(a, b, c, arow, acol, brow, bcol+half, crow, ccol+half, half, N)
+    matrix_multiplication(a, b, c, arow, acol+half, brow+half, bcol+half, crow, ccol+half, half, N)
+    matrix_multiplication(a, b, c, arow+half, acol, brow, bcol, crow+half, ccol, half, N)
+    matrix_multiplication(a, b, c, arow+half, acol+half, brow+half, bcol, crow+half, ccol, half, N)
+    matrix_multiplication(a, b, c, arow+half, acol, brow, bcol+half, crow+half, ccol+half, half, N)
+    matrix_multiplication(a, b, c, arow+half, acol+half, brow+half, bcol+half, crow+half, ccol+half, half, N)
+res = [0, 0, 0, 0]
+matrix_multiplication([1, 2, 3, 4], [5, 6, 7, 8], res, 0, 0, 0, 0, 0, 0, 2, 2)
+print(res)
+'''
